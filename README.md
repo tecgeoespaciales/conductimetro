@@ -6,7 +6,8 @@ Este repositorio contiene el firmware desarrollado en MicroPython para el sistem
 El sistema está configurado por defecto para los siguientes pines y componentes:
 
 * **Microcontrolador:** ESP32.
-* **Conversor ADC (ADS1115):** * Dirección I2C: `0x48`.
+* **Conversor ADC (ADS1115):**
+    * Dirección I2C: `0x48`.
     * Canal de lectura: canal 2 (configurable en `app_config.py`).
 * **Sensor de temperatura (DS18B20):** conectado al GPIO 26.
 * **Botón de extracción:** conectado al GPIO 34.
