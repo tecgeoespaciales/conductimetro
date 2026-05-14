@@ -29,9 +29,11 @@ Firmware de alta confiabilidad diseñado para la placa **Lilygo T-A7670G**. Esta
     * **Sensor de conductividad (TDS):** Sonda industrial conectada al ADS1115.
     * **Tarjeta SD:** Almacenamiento local de respaldo con sistema de archivos redundante.
     * **Gestión de energía:** Monitoreo de nivel de batería LiPo mediante divisor de voltaje integrado.
-* **Gestión de energía:** * Uso de **deep sleep** con temporizador adaptativo para asegurar ciclos de medición exactos.
+* **Gestión de energía:**
+    * Uso de **deep sleep** con temporizador adaptativo para asegurar ciclos de medición exactos.
     * Retención de estado de pines del módem durante el sueño (RTC GPIO).
-* **Conectividad robusta:** * Soporte para redes **4G/LTE Cat-1**.
+* **Conectividad robusta:**
+    * Soporte para redes **4G/LTE Cat-1**.
     * Protocolo MQTT con reintentos automáticos y sincronización de hora mediante la red celular (NTP/CCLK).
 * **Almacenamiento:** Sistema de archivos con redundancia en tarjeta SD y memoria no volátil (NVS) para configuraciones de calibración.
 
