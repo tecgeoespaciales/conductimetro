@@ -1,6 +1,6 @@
-# Aplicación - Conductímetro GUI
+# Aplicación de dos conductímetros
 
-Interfaz gráfica de escritorio (PyQt5) para monitoreo y calibración de un conductímetro digital basado en ESP32. La aplicación realiza cálculos de conductividad eléctrica en tiempo real, gestiona calibraciones de laboratorio y registra datos en CSV.
+Interfaz gráfica de escritorio (PyQt5) para monitoreo y calibración de dos conductímetros digitales basados en ESP32. La aplicación realiza cálculos de conductividad eléctrica en tiempo real, gestiona calibraciones de laboratorio y registra datos en CSV.
 
 ---
 
@@ -31,9 +31,27 @@ Aplicación/
 └── __init__.py              # Inicialización del paquete
 ```
 
----
+## Instalación
 
-## Dependencias
+### Instalación manual (mínimo)
+1. Copiar la carpeta `Aplicación/` a tu directorio de trabajo
+2. Instalar dependencias:
+   ```bash
+   pip install -r Aplicación/requirements.txt
+   ```
+3. Ejecutar:
+   ```bash
+   python Aplicación/main.py
+   ```
+
+### Instalación con scripts automatizados (opcional)
+Si deseas usar los scripts de instalación del raíz:
+- Windows: ejecutar `instalar_windows.bat`
+- Linux: ejecutar `instalar_linux.sh`
+
+Estos scripts copian la carpeta `Aplicación/` a la ubicación apropiada del sistema.
+
+---
 
 ```
 PyQt5>=5.15.0          # Interfaz gráfica
@@ -53,14 +71,19 @@ pip install -r requirements.txt
 
 ## Uso
 
-### Ejecución Directa
+### Opción 1: Ejecución directa (recomendado)
 ```bash
 python Aplicación/main.py
 ```
 
-### Ejecución como Módulo
+### Opción 2: Ejecución como módulo
 ```bash
 python -m Aplicación
+```
+
+### Opción 3: Desde la raíz con run.py (requiere archivo en raíz del proyecto)
+```bash
+python run.py
 ```
 
 ---
@@ -70,10 +93,6 @@ python -m Aplicación
 ### `main.py`
 Interfaz gráfica principal. Contiene:
 - **Cálculo de EC**: Función polinómica de 3er grado para convertir voltaje a conductividad
-  - Coeficientes: `A=133.42`, `B=255.86`, `C=857.39`
-- **Compensación Térmica**: Normalización de voltaje según temperatura
-  - Referencia: 25°C
-  - Coeficiente: 0.02
 - **Carga de Tabla K**: Lee factores de calibración desde `calibration_ranges.cfg`
 
 ### `serial_reader.py`
@@ -93,6 +112,7 @@ Sistema de registro centralizado:
 ### `lab_security.py`
 Seguridad y configuración:
 - Autenticación con contraseña hasheada (SHA-256)
+- Contraseña por defecto: `L4b0r4t0r10`
 - Configuración de calibración multirrango:
   - Rango: 0 - 10000 µS
   - Paso: 50 µS
@@ -116,16 +136,6 @@ voltage_1 = k_factor_1
 voltage_2 = k_factor_2
 ...
 ```
-
----
-
-## Seguridad
-
-Funciones de laboratorio protegidas con contraseña SHA-256:
-- **Contraseña**: `L4b0r4t0r10`
-- **Hash**: Verificado en `lab_security.verify_password()`
-
-Para cambiar la contraseña, modificar `PASSWORD_HASH` en `lab_security.py`.
 
 ---
 
@@ -176,13 +186,3 @@ ESP32 (Serial)
 - La compensación térmica ignora temperaturas fuera del rango [-40°C, 125°C]
 
 ---
-
-## Licencia
-
-Proyecto de la Universidad Distrital Francisco José de Caldas
-
----
-
-## Contacto
-
-Para preguntas o reportes de errores, contactar al equipo de desarrollo del Conductímetro.
