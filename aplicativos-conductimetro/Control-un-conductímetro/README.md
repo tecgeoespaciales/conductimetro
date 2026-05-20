@@ -127,7 +127,6 @@ Flujo:
 
 ## Seguridad
 
-- Contraseña: `L4b0r4t0r10` (SHA-256) en `lab_security.py`
 - Protege acceso a calibración de laboratorio
 - Cambiar: Editar hash en `lab_security.py`
 
