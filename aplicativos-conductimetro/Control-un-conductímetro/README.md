@@ -1,5 +1,5 @@
 
-# 📊 Conductímetro - Control de Escritorio (EMA)
+# Conductímetro - Control de escritorio
 
 **Sistema integrado de medición, calibración y monitoreo de conductividad eléctrica y temperatura para laboratorio**
 
@@ -10,22 +10,22 @@
 
 ---
 
-## 🎯 Descripción General
+## Descripción general
 
-**Conductímetro - Control de Escritorio** es una aplicación profesional de Python + PyQt5 diseñada para:
+**Conductímetro - control de escritorio** es una aplicación profesional de Python + PyQt5 diseñada para:
 
-- 📈 **Lectura en tiempo real** de conductividad eléctrica (0-10,000 µS) y temperatura (-40 a +125°C)
-- 🔧 **Calibración multi-modo**: Laboratorio (0-10 mS), Valores Conocidos personalizado
-- 💾 **Captura y almacenamiento** de datos en CSV con marca de tiempo
-- 📊 **Gráficas interactivas** con análisis estadístico
-- 🔐 **Control de acceso** restringido a funciones de laboratorio (contraseña protegida)
-- 🖥️ **Comunicación serial** bidireccional con ESP32/Arduino vía JSON
+-  **Lectura en tiempo real** de conductividad eléctrica (0-10,000 µS) y temperatura (-40 a +125°C)
+-  **Calibración multi-modo**: Laboratorio (0-10 mS), Valores Conocidos personalizado
+-  **Captura y almacenamiento** de datos en CSV con marca de tiempo
+-  **Gráficas interactivas** con análisis estadístico
+-  **Control de acceso** restringido a funciones de laboratorio (contraseña protegida)
+-  **Comunicación serial** bidireccional con ESP32/Arduino vía JSON
 
 **Caso de uso**: Laboratorios de análisis de agua, investigación de salinidad, monitoreo de calidad ambiental, procesos industriales de purificación.
 
 ---
 
-## ✨ Características Principales
+## Características principales
 
 | Característica | Descripción |
 |---|---|
@@ -42,12 +42,11 @@
 
 ---
 
-## 🏗️ Arquitectura del Proyecto
+##  Arquitectura de la aplicación
 
 ```
-Control-un-conductímetro/
-│
-├── 🖥️ APLICACIÓN PRINCIPAL
+
+├── APLICACIÓN PRINCIPAL
 │   ├── main.py                       [~5000 líneas]
 │   │   ├── ESP32App (QWidget)         ▶ Ventana principal, UI, timers
 │   │   ├── CSVPlotWindow              ▶ Visualización de históricos
@@ -66,7 +65,7 @@ Control-un-conductímetro/
 │       ├── verify_password()          ▶ Autenticación SHA-256
 │       └── LAB_CALIBRATION_CONFIG    ▶ Constantes laboratorio
 │
-├── ⚙️ CONFIGURACIÓN Y DATOS
+├──  CONFIGURACIÓN Y DATOS
 │   ├── calibration_ranges.cfg        [~300 líneas, INI]
 │   │   ├── [RANGES]                  ▶ Límites 0-3000 µS
 │   │   ├── [LABORATORY_CALIBRATION]  ▶ Puntos 0-10 mS con K
@@ -84,7 +83,7 @@ Control-un-conductímetro/
 │       ├── matplotlib>=3.5.0
 │       └── numpy>=1.20.0
 │
-├── 🔨 INSTALACIÓN Y COMPILACIÓN
+├──  INSTALACIÓN Y COMPILACIÓN
 │   ├── instalar_windows.bat          ▶ Setup automático Windows
 │   ├── compilar_windows.bat          ▶ PyInstaller → .exe
 │   ├── instalar_linux.sh             ▶ Setup automático Linux
@@ -92,7 +91,7 @@ Control-un-conductímetro/
 │   │
 │   └── INSTALACION_WINDOWS_LINUX.txt ▶ Instrucciones manuales
 │
-├── 📦 RUNTIME
+├──  RUNTIME
 │   ├── venv/                         ▶ Entorno virtual (generado)
 │   │   ├── Scripts/python.exe        ▶ Windows
 │   │   └── bin/python                ▶ Linux
@@ -100,17 +99,12 @@ Control-un-conductímetro/
 │   ├── datos_*.csv                   ▶ Archivos de muestras (runtime)
 │   │
 │   └── README.md                     ▶ Documentación
-│
-└── 🔗 HARDWARE (Externo)
-    └── ESP32 / Arduino + Sensores
-        ├── Sensor EC (conductividad)
-        ├── Sensor Temp (termistor)
-        └── Firmware MicroPython
+
 ```
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 ### **Backend**
 | Componente | Librería | Versión | Función |
@@ -137,7 +131,7 @@ Control-un-conductímetro/
 
 ---
 
-## 📋 Requisitos
+##  Requisitos
 
 ### **Hardware Mínimo**
 - **PC/Laptop**: Windows 7+ o Linux (Ubuntu 18.04+)
@@ -166,7 +160,7 @@ which pip3                      # Debe existir
 
 ---
 
-## 🚀 Instalación
+##  Instalación
 
 ### **Opción A: Windows (Automático)**
 
@@ -252,7 +246,7 @@ pip list | grep PyQt5
 
 ---
 
-## 🎮 Uso del Proyecto
+##  Uso del Proyecto
 
 ### **Ejecución Normal**
 
@@ -295,7 +289,7 @@ pip install pyinstaller
 
 ---
 
-## 📖 Flujo de Operación Típica
+##  Flujo de Operación Típica
 
 ### **Escenario: Calibración y Medición**
 
