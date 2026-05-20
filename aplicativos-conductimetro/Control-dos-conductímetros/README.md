@@ -93,7 +93,6 @@ Sistema de registro centralizado:
 ### `lab_security.py`
 Seguridad y configuración:
 - Autenticación con contraseña hasheada (SHA-256)
-- Contraseña por defecto: `L4b0r4t0r10`
 - Configuración de calibración multirrango:
   - Rango: 0 - 10000 µS
   - Paso: 50 µS
